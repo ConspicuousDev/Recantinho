@@ -3,12 +3,49 @@
 body{
     margin: 0;
     background-color: whitesmoke;
-    overflow-y: hidden;
     display: flex;
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
 
 .content{
-    display: flex;
-    left: 100px;
+    display: block;
+    padding-left: 100px;
+    width: 100%;
+}
+
+.banner{
+    height: 400px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.section{
+    padding: 20px;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.text{
+    font-weight: 400;
+    font-size: 26px;
+    padding: 10px;
+    text-align: justify;
+    word-break: break-word;
+}
+
+.link{
+    text-decoration: none;
+    color: #386FA4;
+}
+
+.link:hover{
+    opacity: .7;
 }

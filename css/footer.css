@@ -1,0 +1,21 @@
+.footer{
+    background-color: #50A0B0;
+    padding: 40px;
+}
+
+.footer .text {
+    color: whitesmoke;
+    font-weight: 200;
+    font-size: 18px;
+    text-align: center;
+}
+
+.footer .link{
+    text-decoration: none;
+    font-weight: 400;
+    color: #386FA4;
+}
+
+.footer .link:hover{
+    opacity: .7;
+}
