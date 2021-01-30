@@ -7,7 +7,7 @@
 .nav-item{
     width: 100px;
     height: 100px;
-    transition: .2s;
+    transition: .4s;
     border-right: 5px solid;
     box-sizing: border-box;
     background-color: #A0E7E5;
@@ -22,7 +22,6 @@
 
 .nav-item:hover{
     width: 300px;
-    padding-left: 10px;
 }
 
 .nav-item a{
@@ -32,21 +31,21 @@
     align-items: center;
     text-decoration: none;
     color: inherit;
+    transition: .2s;
 }
 
 .nav-item a:hover{
-    opacity: 1;
+    opacity: .7;
+    padding-left: 10px;
 }
 
 .nav-item a img{
     width: 70px;
     height: 70px;
     padding: 15px;
-    opacity: .5;
 }
 
 .nav-item a div{
     text-align: center;
     width: 100%;
-    opacity: .5;
 }
