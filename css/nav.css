@@ -4,6 +4,10 @@
     background-color: #6EBBCB;
 }
 
+.logo{
+    padding: 15px;
+}
+
 .nav-item{
     width: 100px;
     height: 100px;
