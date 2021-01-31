@@ -1,0 +1,41 @@
+.post{
+    margin: 20px auto;
+    width: 50%;
+}
+
+.post .header{
+    display: inline-flex;
+}
+
+.post .header .info{
+    margin: auto 0;
+}
+
+.post .header .info .author{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.post .header .info .date{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.post .header img{
+    width: 70px;
+    height: 70px;
+    border-radius: 80px;
+    margin-right: 20px;
+}
+
+.post .body{
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.post .body div{
+    padding: 3px;
+    text-align: justify;
+    word-break: break-word;
+}
