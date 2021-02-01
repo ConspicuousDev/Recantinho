@@ -23,7 +23,7 @@
             $comments = json_decode($row["postComments"], true);
             $comment = '{"author": "'.$nick.'", "date": "'.date("d").' de '.date("M").' de '.date("Y").' - '.date("H:i").'", "content": "'.$content.'"}';
             array_push($comments, json_decode($comment));
-            $sql = "UPDATE forum SET postComments = '".json_encode($comments)."' WHERE postID = ".$postID.";";
+            $sql = "UPDATE forum SET postComments = '".json_encode($comments, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)."' WHERE postID = ".$postID.";";
             $statement = mysqli_stmt_init($connection);
             if(!mysqli_stmt_prepare($statement, $sql)){
                 header("Location: ../forum?error=Ocorreu um erro na base de dados.");

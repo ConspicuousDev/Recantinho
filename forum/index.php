@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
     <title>Recantinho</title>
     <link rel="icon" href="../img/logo.png">
     <link rel="stylesheet" href="../css/nav.css">
@@ -80,13 +81,13 @@
                 }
                 echo '<div class="create-post">';
                 echo '<div class="title" style="font-size: 28px; font-weight: 600">Adicione um comentário</div>';
-                echo '<form method="post" action="add-comment.php" id="comment-form" autocomplete="off">';
+                echo '<form method="post" action="add-comment.php" id="comment-form-'.$row["postID"].'" autocomplete="off">';
                 echo '<input type="hidden" name="id" value="'.$row["postID"].'">';
                 echo '<label for="user">COMO DEVEMOS TE CHAMAR?</label><br>';
                 echo '<input class="text-field" name="user" type="text" placeholder="Apelido" maxlength="18"><br>';
                 echo '<span class="small-text">Deixe o campo acima em branco para postar como Anônimo.</span><br>';
                 echo '<div style="margin: 20px"></div>';
-                echo '<textarea style="height: 100px; margin-top: 0" form="comment-form" name="content" class="text-area" placeholder="Escreva aqui..." maxlength="200"></textarea><br>';
+                echo '<textarea style="height: 100px; margin-top: 0" form="comment-form-'.$row["postID"].'" name="content" class="text-area" placeholder="Escreva aqui..." maxlength="200"></textarea><br>';
                 echo '<input class="button" name="submit-comment" type="submit" value="Enviar">';
                 echo '</form>';
                 echo '</div>';
