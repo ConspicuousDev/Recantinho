@@ -6,6 +6,7 @@ body{
     display: flex;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+    color: #373633;
 }
 
 .content{
@@ -35,8 +36,15 @@ body{
 
 .text{
     font-weight: 400;
-    font-size: 26px;
+    font-size: 22px;
     padding: 10px;
+    text-align: justify;
+    word-break: break-word;
+}
+
+.small-text{
+    font-weight: 300;
+    font-size: 16px;
     text-align: justify;
     word-break: break-word;
 }
@@ -49,4 +57,62 @@ body{
 
 .link:hover{
     opacity: .7;
+}
+
+.button{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 30px;
+    background-color: whitesmoke;
+    border: 1px solid #373633;
+    border-radius: 4px;
+    color: #373633;
+    font-family: 'Poppins', sans-serif;
+    transition: background .2s, color .2s, border .2s;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #373633;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.button:focus{
+    outline: 0;
+}
+
+label{
+    font-weight: 600;
+    font-size: 20px;
+    text-align: justify;
+    word-break: break-word;
+}
+
+.text-field{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 10px;
+    background-color: whitesmoke;
+    border: 1px solid #373633;
+    border-radius: 4px;
+    color: #373633;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-area{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 10px;
+    background-color: whitesmoke;
+    border: 1px solid #373633;
+    border-radius: 4px;
+    color: #373633;
+    font-family: 'Poppins', sans-serif;
+    width: 75%;
+    height: 500px;
+    resize: none;
 }

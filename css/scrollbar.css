@@ -14,3 +14,13 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #999;
 }
+
+::-moz-selection {
+    color: whitesmoke;
+    background: #373633;
+}
+
+::selection {
+    color: whitesmoke;
+    background: #373633;
+}

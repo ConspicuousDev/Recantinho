@@ -1,9 +1,15 @@
 .post{
     margin: 20px auto;
     width: 50%;
+    transition: background-color .4s, height .4s;
+}
+
+.post:hover{
+    background-color: #DFDFDF;
 }
 
 .post .header{
+    padding: 10px;
     display: inline-flex;
 }
 
@@ -38,4 +44,68 @@
     padding: 3px;
     text-align: justify;
     word-break: break-word;
+}
+
+.post .comments{
+    padding: 0 20px;
+}
+
+.post .comments .comment .header {
+    padding: 10px;
+    display: inline-flex;
+}
+
+.post .comments .comment .header .info{
+    margin: auto 0;
+}
+
+.post .comments .comment .header .info .author{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.post .comments .comment .header .date {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.post .comments .comment .header img{
+    width: 60px;
+    height: 60px;
+    border-radius: 80px;
+    margin-right: 20px;
+}
+
+.post .comments .comment .body{
+    font-weight: 300;
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+.post .comments .comment .body div{
+    padding: 3px;
+    text-align: justify;
+    word-break: break-word;
+}
+
+.create-post{
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+.create-post .response{
+    font-weight: 300;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.create-post .error{
+    background-color: rgba(255, 0, 0, .3);
+}
+
+.create-post .success{
+    background-color: rgba(0, 255, 0, .3);
 }
