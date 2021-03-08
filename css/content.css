@@ -24,7 +24,9 @@ body{
 }
 
 .section{
+    margin: 0 auto;
     padding: 20px;
+    width: 75%;
 }
 
 .title{
@@ -115,4 +117,26 @@ label{
     width: 75%;
     height: 500px;
     resize: none;
+}
+
+.form{
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+.response{
+    font-weight: 300;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.error{
+    background-color: rgba(255, 0, 0, .3);
+}
+
+.success{
+    background-color: rgba(0, 255, 0, .3);
 }

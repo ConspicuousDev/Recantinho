@@ -23,6 +23,10 @@
             $comments = json_decode($row["postComments"], true);
             $comment = '{"author": "'.$nick.'", "date": "'.date("d").' de '.date("M").' de '.date("Y").' - '.date("H:i").'", "content": "'.$content.'"}';
             array_push($comments, json_decode($comment));
+            if(in_array(null, $comments)){
+                header("Location: ../forum?error=Você utilizou caracteres inválidos.");
+                exit();
+            }
             $sql = "UPDATE forum SET postComments = '".json_encode($comments, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)."' WHERE postID = ".$postID.";";
             $statement = mysqli_stmt_init($connection);
             if(!mysqli_stmt_prepare($statement, $sql)){

@@ -1,0 +1,101 @@
+.chat-section{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.chat-container{
+    display: inline-block;
+    max-width: 1300px;
+    width: 85vw;
+    height: 90vh;
+    background: #373633;
+    padding: 10px;
+    border-radius: 20px;
+    border: #386FA4 3px solid;
+}
+
+.chat-container .chat-display{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    overflow: auto;
+    height: 92%;
+    padding: 5px;
+}
+
+.chat-container .chat-interface {
+    height: 8%;
+}
+
+.chat-display .message-container{
+    display: inline-block;
+    width: 100%;
+}
+
+.chat-display .received-message{
+    width: 50%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.chat-display .received-message .author{
+    color: #CCCCCC;
+    font-weight: 700;
+}
+
+.chat-display .received-message .message{
+    word-break: break-all;
+    background: #59A5D8;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.chat-display .sent-message{
+    width: 50%;
+    text-align: right;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.chat-display .sent-message .author{
+    color: #CCCCCC;
+    font-weight: 700;
+}
+
+.chat-display .sent-message .message{
+    word-break: break-all;
+    background: #91E5F6;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.popup{
+    display: none;
+    position: fixed;
+    width: 30%;
+    z-index: 1;
+    top: 100px;
+    left: 35%;
+    overflow: auto;
+}
+
+.popup .close{
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: bold;
+    transition: opacity .1s;
+}
+
+.popup .close:hover, .popup .close:focus{
+    opacity: .6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup .message{
+    width: 100%;
+    text-align: center;
+}

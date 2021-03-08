@@ -8,7 +8,6 @@
     <meta http-equiv="Content-type" content="text/html;charset=utf-8">
     <title>Recantinho</title>
     <link rel="icon" href="../img/logo.png">
-    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/content.css">
     <link rel="stylesheet" href="../css/scrollbar.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -23,12 +22,13 @@
     ?>
 </head>
 <body>
+    <link rel="stylesheet" href="../css/nav.css">
     <div class="nav">
-        <div class="logo"><a href="http://phild.education:81/"><img src="../img/logo.png" width="70" height="70"></a></div>
-        <div class="nav-item" style="border-color: #91E5F6"><a href="http://phild.education:81/home"><img src="../img/icons/home.png"><div>Home</div></a></div>
-        <div class="nav-item" style="border-color: #84D2F6"><a href="http://phild.education:81/cartas"><img src="../img/icons/cartas.png"><div>Cartas</div></a></div>
-        <div class="nav-item" style="border-color: #59A5D8"><a href="http://phild.education:81/forum"><img src="../img/icons/compartilhar.png"><div>Fórum</div></a></div>
-        <div class="nav-item" style="border-color: #386FA4"><a href="http://phild.education:81/chat"><img src="../img/icons/chat.png"><div>Chat</div></a></div>
+        <div class="logo"><a href="../"><img src="../img/logo.png" width="70" height="70"></a></div>
+        <div class="nav-item" style="border-color: #91E5F6"><a href="../home"><img src="../img/icons/home.png"><div>Home</div></a></div>
+        <div class="nav-item" style="border-color: #84D2F6"><a href="../cartas"><img src="../img/icons/cartas.png"><div>Cartas</div></a></div>
+        <div class="nav-item" style="border-color: #59A5D8"><a href="../forum"><img src="../img/icons/compartilhar.png"><div>Fórum</div></a></div>
+        <div class="nav-item" style="border-color: #386FA4"><a href="../chat"><img src="../img/icons/chat.png"><div>Chat</div></a></div>
     </div>
     <div class="content">
         <div class="banner"></div>
@@ -43,7 +43,7 @@
             $sql = "SELECT * FROM forum ORDER BY postID DESC LIMIT ".$postCount.";";
             $statement = mysqli_stmt_init($connection);
             if(!mysqli_stmt_prepare($statement, $sql)){
-                header("Location: ../?error=Ocorreu um erro na base de dados.");
+                header("Location: ?error=Ocorreu um erro na base de dados.");
                 exit();
             }
             mysqli_stmt_execute($statement);
@@ -79,7 +79,7 @@
                     echo '</div>';
                     echo '</div>';
                 }
-                echo '<div class="create-post">';
+                echo '<div class="form">';
                 echo '<div class="title" style="font-size: 28px; font-weight: 600">Adicione um comentário</div>';
                 echo '<form method="post" action="add-comment.php" id="comment-form-'.$row["postID"].'" autocomplete="off">';
                 echo '<input type="hidden" name="id" value="'.$row["postID"].'">';
@@ -115,7 +115,7 @@
             <div class="title">Crie uma postagem!</div>
             <div class="text">&emsp;Preecha o formulário abaixo para compartilhar uma história, experiência ou fato com todos aqui. Desse modo, poderemos conversar e trocar ideias por meio dos comentários.</div>
         </div>
-        <div class="create-post">
+        <div class="form">
             <form method="post" action="create-post.php" id="post-form" autocomplete="off">
                 <label for="user">COMO DEVEMOS TE CHAMAR?</label><br>
                 <input class="text-field" name="user" type="text" placeholder="Apelido" maxlength="18"><br>
@@ -147,17 +147,17 @@
 <script>
     const elements = document.querySelectorAll(".post")
     for(var i = 0; i < elements.length; i++){
-        elements[i].getElementsByClassName("create-post")[0].hidden = true
+        elements[i].getElementsByClassName("form")[0].hidden = true
     }
 
-    function enteredPost(element){
-        const id = element.id
-        element.getElementsByClassName("create-post")[0].hidden = false
+    function enteredPost(post){
+        const id = post.id
+        post.getElementsByClassName("form")[0].hidden = false
     }
 
-    function leftPost(element){
-        const id = element.id
-        document.getElementById(id).getElementsByClassName("create-post")[0].hidden = true
+    function leftPost(post){
+        const id = post.id
+        post.getElementsByClassName("form")[0].hidden = true
     }
 </script>
 </html>

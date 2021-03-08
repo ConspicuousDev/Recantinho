@@ -1,0 +1,18 @@
+.institution-selector{
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border: transparent 1px solid;
+    border-radius: 10px;
+    transition: border .2s, color .2s, background-color .2s;
+}
+
+.institution-selector:hover{
+    cursor: pointer;
+    border: #373633 1px solid;
+}
+
+.selected-institution{
+    color: #CCCCCC;
+    background-color: #373633;
+}

@@ -47,7 +47,7 @@
 }
 
 .post .comments{
-    padding: 0 20px;
+    padding: 0 20px 20px 30px;
 }
 
 .post .comments .comment .header {
@@ -86,26 +86,4 @@
     padding: 3px;
     text-align: justify;
     word-break: break-word;
-}
-
-.create-post{
-    margin: 20px auto;
-    width: 50%;
-    text-align: center;
-}
-
-.create-post .response{
-    font-weight: 300;
-    font-size: 16px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 4px;
-}
-
-.create-post .error{
-    background-color: rgba(255, 0, 0, .3);
-}
-
-.create-post .success{
-    background-color: rgba(0, 255, 0, .3);
 }
