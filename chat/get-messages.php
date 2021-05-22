@@ -1,8 +1,25 @@
 <?php
     require_once '../php/database.php';
+    $sql = "SELECT * FROM users";
+    $statement = mysqli_stmt_init($connection);
+    if(!mysqli_stmt_prepare($statement, $sql)){
+        header("Location:../chat?error=Ocorreu um erro na base de dados.");
+        exit();
+    }
+    mysqli_stmt_execute($statement);
+    $result = mysqli_stmt_get_result($statement);
+    $usernames = [];
+    while($row = mysqli_fetch_array($result)){
+        if($row["username"] !== null){
+            $usernames[$row["ip"]] = $row["username"];
+        }else{
+            $usernames[$row["ip"]] = "USUÁRIO ".$row["id"];
+        }
+    }
     $sql = "SELECT * FROM messages ORDER BY id DESC LIMIT " . $_POST["count"] . ";";
     $statement = mysqli_stmt_init($connection);
-    if (!mysqli_stmt_prepare($statement, $sql)) {
+    if(!mysqli_stmt_prepare($statement, $sql)){
+        header("Location:../chat?error=Ocorreu um erro na base de dados.");
         exit();
     }
     mysqli_stmt_execute($statement);
@@ -10,6 +27,7 @@
     $firstMessage = 0;
     $return = "";
     while ($row = mysqli_fetch_row($result)) {
+        echo mysqli_error($connection);
         if ($firstMessage < $row[0]) {
             $firstMessage = $row[0];
         }
@@ -22,17 +40,9 @@
             $return .= '</div>';
         } else {
             $author = "USUÁRIO NÃO ENCONTRADO";
-            $userSQL = "SELECT * FROM users WHERE ip = '".$row[1]."';";
-            $userStatement = mysqli_stmt_init($connection);
-            if (!mysqli_stmt_prepare($userStatement, $userSQL)) {
-                exit();
+            if(array_key_exists($row[1], $usernames)){
+                $author = $usernames[$row[1]];
             }
-            mysqli_stmt_execute($userStatement);
-            $userResult = mysqli_stmt_get_result($userStatement);
-            if($userRow = mysqli_fetch_row($userResult)){
-                $author = $userRow[2];
-            }
-            $result = mysqli_stmt_get_result($statement);
             $return .= '<div class="message-container">';
             $return .= '<div class="received-message" id="' . $row[0] . '">';
             $return .= '<div class="author">' . strtoupper($author) . '</div>';
@@ -41,7 +51,4 @@
             $return .= '</div>';
         }
     }
-//    if ($firstMessage > 0) {
-//        $return .= "<script>document.getElementById('" . $firstMessage . "').scrollIntoView(true)</script>";
-//    }
     echo $return;

@@ -64,12 +64,12 @@
 
                 </div>
                 <div class="chat-interface">
-                    <form style="display: inline-flex; width: 100%" action="send-message.php" method="post">
-                        <input type="hidden" name="ip" value="<?php echo $ip ?>">;
-                        <input class="text-field" style="width: 15%;" type="text" name="user" placeholder="Anônimo" value="<?php echo $user ?>">;
-                        <input class="text-field" style="width: 100%;" type="text" name="text" placeholder="Escreva sua mensagem...">;
-                        <input type="hidden" name="count" value="<?php echo $messageCount ?>">;
-                        <input class="button" type="submit" name="submit" value="Enviar">;
+                    <form style="display: inline-flex; width: 100%" action="send-message.php" method="post" autocomplete="off">
+                        <input type="hidden" name="ip" value="<?php echo $ip ?>">
+                        <input class="text-field" style="width: 15%;" type="text" name="user" placeholder="Anônimo" value="<?php echo $user ?>">
+                        <input class="text-field" style="width: 100%;" type="text" name="text" placeholder="Escreva sua mensagem..." autofocus>
+                        <input type="hidden" name="count" value="<?php echo $messageCount ?>">
+                        <input class="button" type="submit" name="submit" value="Enviar">
                     </form>
                 </div>
             </div>

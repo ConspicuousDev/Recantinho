@@ -15,7 +15,7 @@
     <?php
         $url = strtok((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", "?");
         echo("<script>history.replaceState({},'','$url');</script>");
-        $postCount = 10;
+        $postCount = 50;
         if(isset($_GET["postCount"])){
             $postCount = intval($_GET["postCount"]);
         }
@@ -31,7 +31,6 @@
         <div class="nav-item" style="border-color: #386FA4"><a href="../chat"><img src="../img/icons/chat.png"><div>Chat</div></a></div>
     </div>
     <div class="content">
-        <div class="banner"></div>
         <div class="section">
             <div class="title">Fórum</div>
             <div class="text">&emsp;Seja bem vindo ao nosso fórum! O propósito desta página é inpirar, ser inspirado, apoiar ou ser apoiado através das postagens abaixo, onde outros usuários (e talvez você) publicarão suas histórias possibilitando algum engajamento por meio dos comentários em cada postagem. Você pode fazer uma publicação <a class="link" href="#create-post">aqui</a>, mas antes é necessário ter em mente algumas regras:</div>

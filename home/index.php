@@ -19,7 +19,8 @@
     </div>
     <div class="content">
         <div class="section">
-            <div class="embedsocial-hashtag" data-ref="b1735ad2054e4f1cbe4903f7a5c60a3eed37ab89" ><a class="feed-powered-by-es" href="https://embedsocial.com/products/embedfeed/" target="_blank" title="Powered by EmbedSocial">Powered by EmbedSocial<span>→</span></a></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>
+            <div class="embedsocial-hashtag" data-ref="b1735ad2054e4f1cbe4903f7a5c60a3eed37ab89"></div>
+            <script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>
         </div>
         <div class="footer">
             <div class="text">Todos os direitos reservados © Recantinho 2021</div>

@@ -1,3 +1,9 @@
+.institution-display{
+    width: 100%;
+    justify-content: space-around;
+    display: block;
+}
+
 .institution-selector{
     display: inline-block;
     padding: 10px;

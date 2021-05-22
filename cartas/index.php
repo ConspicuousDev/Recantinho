@@ -26,7 +26,6 @@ require_once '../php/database.php';
         <div class="nav-item" style="border-color: #386FA4"><a href="../chat"><img src="../img/icons/chat.png"><div>Chat</div></a></div>
     </div>
     <div class="content">
-        <div class="banner"></div>
         <div class="section">
             <div class="title">Cartas</div>
             <div class="text">&emsp;Começou o dia se sentindo especial? Compartilhe esse sentimento com alguem que vá apreciá-lo! Ao preencher o formulário abaixo, você pode selecionar alguma das instituições parceiras para enviar uma mensagem que será entregue a seus beneficiários.</div>
@@ -35,7 +34,7 @@ require_once '../php/database.php';
         <div class="form" style="width: 80vw; max-width: 1000px">
             <form method="post" action="send-message.php" id="message-form" autocomplete="off">
                 <label>SELECIONE UMA INSTITUIÇÃO</label><br>
-                <div style="width: 100%; justify-content: space-around; display: block; overflow: auto">
+                <div class="institution-display">
                     <?php
                         foreach(scandir("../img/institutions/") as $file){
                             if(substr($file, 0, 1) !== "."){
@@ -46,9 +45,9 @@ require_once '../php/database.php';
                                 }
                                 $institutionName = substr($institutionName, 0, strlen($institutionName)-1);
                                 echo '<div class="institution-selector" id="'.$institutionName.'" onclick="setInstitution(\''.$institutionName.'\')">';
-                                echo '<img src="../img/institutions/'.$file.'">';
+                                echo '<img src="../img/institutions/'.$file.'" width="160" height="160">';
                                 echo '<div>'.$institutionName.'</div>';
-                                echo '<a href="http://'.str_replace(".png", "", $institutionParts[sizeof($institutionParts)-1]).'" target="_blank"><img src="../img/icons/link.png" width="32" height="32"></a>';
+                                echo '<a href="http://'.str_replace("=", "/", str_replace(".png", "", $institutionParts[sizeof($institutionParts)-1])).'" target="_blank"><img src="../img/icons/link.png" width="24" height="24"></a>';
                                 echo '</div>';
                             }
                         }

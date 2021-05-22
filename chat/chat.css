@@ -47,7 +47,7 @@
 }
 
 .chat-display .received-message .message{
-    word-break: break-all;
+    word-break: break-word;
     background: #59A5D8;
     padding: 5px;
     border-radius: 8px;
@@ -66,7 +66,7 @@
 }
 
 .chat-display .sent-message .message{
-    word-break: break-all;
+    word-break: break-word;
     background: #91E5F6;
     padding: 5px;
     border-radius: 8px;
